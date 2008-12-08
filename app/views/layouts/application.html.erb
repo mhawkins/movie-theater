@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>
+			Movie Theater
+		</title>
+		
+		<%= stylesheet_link_tag 'screen' %>
+		<%= stylesheet_link_tag 'theater' %>
+		<!--[if IE]><%= stylesheet_link_tag 'ie' %><![endif]-->
+		<%= javascript_include_tag :all %>
+	</head>
+	<body>
+		<div class="container">
+			
+			<div class="span-24" id="header">
+				<div class="margin-offset">
+					<h1><strong>Movie Theater</strong></h1>
+					<hr />
+				</div>
+			</div> <!-- end of id="header" -->
+			
+			<div class="span-18 border" id="content">
+				
+				<div id="breadcrumbs">
+					<%= yield :breadcrumbs%>
+				</div><!-- end of id="breadcrumbs" -->
+				
+				<% if flash[:notice] %>
+				<div class="success">
+					<%= h flash[:notice]%>
+				</div> <!-- end of class="success" -->
+				<% elsif flash[:warning] %>
+				<div class="notice">
+					<%= h flash[:warning]%>
+				</div> <!-- end of class="notice" -->
+				<% elsif flash[:error] %>
+				<div class="error">
+					<%= h flash[:error]%>
+				</div> <!-- end of class="error" -->
+				<% end %>
+				
+				<%= yield %>
+				
+				
+			</div> <!-- end of id="content" -->
+			
+			<div class="span-6 last" id="sidebar">
+				<%= yield :sidebar %>
+			</div> <!-- end of id="footer" -->
+			
+			<div class="span-24" id="footer">
+				Movie Theater 2008
+			</div> <!-- end of id="footer" -->
+			
+		</div>
+	</body>
+</html>

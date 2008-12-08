@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+comedy_film:
+  title: Yet Another Comedy
+  description: Description
+  description_html: Description
+  runtime: 2008-12-07 19:36:01
+
+action_film:
+  title: A New Action Movie
+  description: Description
+  description_html: Description
+  runtime: 2008-12-07 19:36:01

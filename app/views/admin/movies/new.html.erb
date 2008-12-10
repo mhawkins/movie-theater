@@ -1,2 +1,11 @@
-<h1>Admin::Movies#new</h1>
-<p>Find me in app/views/admin/movies/new.html.erb</p>
+<h1>New Movie</h1>
+
+<%= error_messages_for :movie %>
+
+<% form_for @movie, :url => admin_movies_path do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %>
+<%= f.label :description %>
+<%= f.text_field :description %>
+<%= f.submit "Save" %>
+<% end %>
